@@ -1,0 +1,143 @@
+@import "./variables";
+
+html {
+  box-sizing: border-box;
+  font-size: 65.5%; /* 10px = 1rem */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: $font-family;
+  background-color: $neutralVeryDarkBlue--main;
+  color: $primarySoftBlue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $neutralWhite;
+  text-decoration: none;
+  transition: color ease 200ms;
+}
+
+a:hover {
+  color: $primaryCyan;
+}
+
+.bodyCard {
+  background-color: $neutralVeryDarkBlue--card;
+  max-width: 33rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0px 30px 0px 15px rgba(7, 15, 25, 0.1);
+
+  .bodyCard__img {
+    position: relative;
+
+    .bodyCard__img--screen {
+      position: absolute;
+      width: 100%;
+      height: 98%;
+      background-color: $primaryCyan;
+      border-radius: 1rem;
+      transition: all ease 200ms;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+
+      img {
+        width: 4rem;
+      }
+    }
+
+    .bodyCard__img--screen:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+    }
+  }
+
+  .bodyCard__mainCard h1 {
+    font-weight: map-get($font-weight, font-semibold);
+    font-size: 2rem;
+    color: $neutralWhite;
+    margin-top: 2rem;
+  }
+
+  .bodyCard__mainCard > p {
+    font-weight: map-get($font-weight, font-light);
+    margin: 1rem 0 2rem 0;
+  }
+
+  .bodyCard__mainCard {
+    .bodyCard__mainCard-priceTime {
+      display: flex;
+      justify-content: space-between;
+
+      .bodyCard__mainCard-priceTime--price {
+        display: flex;
+        align-items: center;
+        font-weight: map-get($font-weight, font-semibold);
+        color: $primaryCyan;
+
+        img {
+          margin-right: 0.5rem;
+          max-height: 1.8rem;
+        }
+      }
+
+      .bodyCard__mainCard-priceTime--time {
+        display: flex;
+        align-items: center;
+        font-weight: map-get($font-weight, font-light);
+        font-size: 1.4rem;
+
+        img {
+          margin-right: 0.5rem;
+          max-height: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .bodyCard__footerCard {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid $neutralVeryDarkBlue--line;
+
+    img {
+      max-height: 3rem;
+      margin-right: 1rem;
+      border-radius: 10rem;
+      border: 1px solid $neutralWhite;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
